@@ -1,7 +1,9 @@
 FROM node:alpine
 
 ARG CRON
+ARG INTERVAL
 ENV CRON=$CRON
+ENV INTERVAL=$INTERVAL
 
 COPY ./entrypoint /usr/local/bin/
 COPY ./App.js /
