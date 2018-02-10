@@ -11,6 +11,6 @@
 * `docker build -t scheduler .`
 - Run a Container for your image along with your cron schedule
 <br>
-* For example, to run the App.js tasks on the 45th minute of the hour, run:
+* For example, to run the App.js tasks on the 15th minute of the hour, run:
 <br>
-`docker run -d scheduler CRON='* 45 * * * *'`
+`docker run --rm -t -e CRON="* 15 * * * *" scheduler`

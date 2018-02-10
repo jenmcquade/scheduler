@@ -14,6 +14,7 @@ const schedule = require('node-schedule');
 const app = require('./App').App;
 
 const CRON = process.env.CRON ? process.env.CRON : '* 42 * * * *';
+console.log('CRON is set to: ' + CRON)
 
 // Start immediately, then on CRON
 app.exec();
