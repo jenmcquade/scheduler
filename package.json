@@ -1,0 +1,12 @@
+{
+  "name": "scheduler",
+  "version": "0.1.0",
+  "repository": "https://github.com/jonmcquade/scheduler",
+  "description": "Dockerized node-schedule app",
+  "license": "MIT",
+  "homepage": "https://github.com/jonmcquade/scheduler",
+  "dependencies": {
+    "node-schedule": "1.3.0",
+    "request": "2.83.0"
+  }
+}

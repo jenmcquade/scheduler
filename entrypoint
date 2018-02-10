@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+
+# Use this file for customizing the default behavior when a container is created
+set -e
+
+set -- node /scheduler.js "@"
+
+exec "$@"
+
