@@ -23,12 +23,13 @@ if(!CRON && !INTERVAL) {
 }
 
 // Start immediately, then on CRON
+console.log('App.js was executed at ' + getCurrentTime());
 app.exec();
 
 if(CRON) {
   var j = schedule.scheduleJob(CRON, function(){
+    console.log('App.js was executed at ' + getCurrentTime());
     app.exec();
-    console.log('App.js was executed');
   });
 }
 
@@ -38,8 +39,20 @@ if(INTERVAL) {
     return false;
   }
   setInterval(function() {
+    console.log('App.js was executed at ' + getCurrentTime());
     app.exec();
-    console.log('App.js was executed');
   }, ((parseInt(INTERVAL)) * 1000));
+}
+
+function getCurrentTime() {
+  var dt = new Date();  
+  var month = dt.getMonth()+1;  
+  var day = dt.getDate();  
+  var year = dt.getFullYear();  
+  var hour = dt.getHours();
+  var minute = dt.getMinutes();
+  var second = dt.getSeconds();
+  var mil = dt.getMilliseconds();
+  return 'second: ' + second + ':' + mil + ' minute: ' + minute + ' hour: ' + hour + ' day: ' + month + '-' + day + '-' + year;
 }
 

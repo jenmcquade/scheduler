@@ -6,6 +6,7 @@ ENV CRON=$CRON
 ENV INTERVAL=$INTERVAL
 
 COPY ./entrypoint /usr/local/bin/
+COPY ./env.js /
 COPY ./App.js /
 COPY ./scheduler.js /
 COPY ./package.json /
